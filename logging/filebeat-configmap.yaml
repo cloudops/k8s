@@ -39,7 +39,7 @@ data:
                     match: after
             - condition:
                 equals:
-                  kubernetes.namespace: elasticsearch
+                  kubernetes.namespace: logging
               config:
                 - type: docker
                   containers.ids:
