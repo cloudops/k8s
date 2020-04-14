@@ -1,0 +1,55 @@
+apiVersion: storage.k8s.io/v1
+kind: StorageClass
+metadata:
+  name: logging
+  namespace: logging
+provisioner: kubernetes.io/no-provisioner
+volumeBindingMode: WaitForFirstConsumer
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume-logging-1
+  namespace: logging
+spec:
+  storageClassName: logging
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: logging
+  hostPath:
+    path: "/mnt/data"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume-logging-2
+  namespace: logging
+spec:
+  storageClassName: logging
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: logging
+  hostPath:
+    path: "/mnt/data"
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: data-volume-logging-3
+  namespace: logging
+spec:
+  storageClassName: logging
+  capacity:
+    storage: 10Gi
+  accessModes:
+    - ReadWriteOnce
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: logging
+  hostPath:
+    path: "/mnt/data"
